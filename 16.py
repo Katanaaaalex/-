@@ -12,16 +12,16 @@
 
 # **Ввод:** пара-ра-рам рам-пам-папам па-ра-па-да    
 #     **Вывод:** Парам пам-пам
-n = input("Введите стихотворение: ")
-volwes = ['а', 'о', 'э', 'е', 'и', 'ы', 'у', 'ё', 'ю', 'я']
-poem = n.split() #разбивает стихотвоение на отдельные слова
-result = list()
-for i in poem:
+n = input("Введите стихотворение: ").lower().split()
+volwes = 'а, о, э, е, и, ы, у, ё, ю, я'
+# poem = n.split() #разбивает стихотвоение на отдельные слова
+result = set()
+for i in n:
     a = 0
     for letter in i:
         if letter in volwes:
             a += 1 #подсчет количества гласных букв
-    result.append(a)
+    result.add(a)
 if len(set(result)) == 1:
     print('Парам пам-пам')
 else:
